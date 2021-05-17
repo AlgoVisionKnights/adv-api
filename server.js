@@ -1,5 +1,5 @@
 const express = require('express');
-const algorithmRoute = require('./routes/algorithm.route');
+const algorithmRoute = require('./routes/algorithms.routes');
 const app = express();
 
 // Configuring dotenv to extract info from the .env file
