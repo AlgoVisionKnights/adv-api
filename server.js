@@ -1,12 +1,12 @@
-var express = require('express');
+const express = require('express');
 
 // Configuring dotenv to extract info from the .env file
 require('dotenv').config();
 
-var app = express();
+const app = express();
 
 // Extracting PORT from .env
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port);
-console.log(`Listening to localhost:${port}`);
+console.log(`Listening to http://localhost:${port}`);
