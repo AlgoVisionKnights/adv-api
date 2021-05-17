@@ -4,6 +4,8 @@ var express = require('express');
 require('dotenv').config();
 
 var app = express();
+
+// Extracting PORT from .env
 var port = process.env.PORT || 3000;
 
 app.listen(port);
