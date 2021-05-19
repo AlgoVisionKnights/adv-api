@@ -1,13 +1,21 @@
 const express = require('express');
 const algorithmRoute = require('./routes/algorithms.routes');
 const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // Configuring dotenv to extract info from the .env file
 require('dotenv').config();
 
 // Extracting PORT from .env
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
+app.use(cors());
 
+// This allows to parse the body passed in the req.body object.
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Route to manage algorithms
 app.use('/algorithms', algorithmRoute);
 
 app.listen(port);
