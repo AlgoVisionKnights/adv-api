@@ -3,6 +3,20 @@ const algorithmRoute = require('./routes/algorithms.routes');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const admin = require('firebase-admin');
+const serviceAccount = require('./ServiceAccount.json');
+
+admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
+
+const db = admin.firestore();
+
+// db.collection('algorithms')
+// 	.get()
+// 	.then((querySnapshot) => {
+// 		querySnapshot.forEach((doc) => {
+// 			console.log(`${doc.id} => ${doc.data().AlgorithmName}`);
+// 		});
+// 	});
 
 // Configuring dotenv to extract info from the .env file
 require('dotenv').config();
